@@ -16,8 +16,7 @@ class AddMessage extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
-    //Call the callback function that was passed to this component from ChatWindow
+    // Call the callback function that was passed to this component from ChatWindow
     this.props.onMessage(this.state.message);
   };
 
@@ -39,6 +38,7 @@ class AddMessage extends Component {
             placeholder="Enter your message..."
             onChange={this.handleInputChange}
           />
+
           <div className="input-group-append">
             <button className="btn submit-button" disabled={this.isDisabled()}>
               SEND

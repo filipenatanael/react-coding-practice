@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ChatWindow from './ChatWindow';
+import ChatWindow from './components/ChatWindow';
 
 const users = [{ username: 'Amy' }, { username: 'Jon' }];
 
@@ -9,15 +9,18 @@ class App extends Component {
   state = {
     messages: [], //will hold this --> {usermame: 'Amy', text: 'a'}
   };
+
   onMessage = (username, message) => {
     const newMessage = {
       ['username']: username,
       ['text']: message,
     };
-    this.setState(currState => ({
-      messages: currState.messages.concat([newMessage]),
+
+    this.setState(prevState => ({
+      messages: prevState.messages.concat([newMessage]),
     }));
   };
+
   render() {
     const { messages } = this.state;
 

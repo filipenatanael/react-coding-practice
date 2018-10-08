@@ -11,7 +11,8 @@ const MessageHistory = props => {
           key={index}
           className={message.username === user.username ? 'message sender' : 'message recipient'}
         >
-          <p>{`${message.username}: ${message.text}`}</p>
+
+        <p>{`${message.username}: ${message.text}`}</p>
         </li>
       ))}
     </ul>
