@@ -2,11 +2,11 @@
   "name": "storybook-enzyme-lyef",
   "version": "1.1.2",
   "description": "An opinionated boilerplate for reusable and declouped react components.",
-  "main": "dist/Main.js",
+  "main": "dist/FullHeader.js",
   "scripts": {
     "build": "npm run clean && npm run babel && npm run minify",
     "babel": "./node_modules/.bin/babel src -d dist",
-    "minify": "./node_modules/.bin/uglifyjs -c -m -o dist/Main.min.js dist/Main.js",
+    "minify": "./node_modules/.bin/uglifyjs -c -m -o dist/FullHeader.min.js dist/FullHeader.js",
     "pub": "npm run build && npm publish",
     "clean": "rimraf dist",
     "start": "npm run storybook",
