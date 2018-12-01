@@ -10,6 +10,9 @@ We'll use Storybook, Enzyme and Lyef React Component.
 - npm start
 - npm run test
 
+### chai-enzyme
+- npm install --save-dev chai-enzyme
+
 ## Creating your Component
 
 ### Writing your code

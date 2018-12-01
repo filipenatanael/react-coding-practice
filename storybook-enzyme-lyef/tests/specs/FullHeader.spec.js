@@ -1,7 +1,10 @@
 import React from 'react';
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
+import chaiEnzyme from 'chai-enzyme';
 import { shallow } from 'enzyme';
 import FullHeader from '../../src/FullHeader';
+
+chai.use(chaiEnzyme);
 
 describe('FullHeader Component', () => {
   it('should have <header> tag when mount.', () => {
@@ -14,7 +17,7 @@ describe('FullHeader Component', () => {
     it('should have <h1> tag when title passed.', () => {
       const wrapper = shallow(
         <FullHeader
-          title="TDD Trainning"
+        title="TDD Trainning"
         />);
         expect(wrapper.find('h1')).to.have.length(1);
       });
@@ -27,7 +30,7 @@ describe('FullHeader Component', () => {
       it('should have <h1> tag with the title passed.', () => {
         const wrapper = shallow(
           <FullHeader
-            title="TDD Trainning"
+          title="TDD Trainning"
           />);
           expect(wrapper.find('h1').props().children).to.be.equal("TDD Trainning");
         });
@@ -38,7 +41,7 @@ describe('FullHeader Component', () => {
         it('should have <h2> tag when subtitle passed.', () => {
           const wrapper = shallow(
             <FullHeader
-              subtitle="Test Driven Development"
+            subTitle="Test Driven Development"
             />);
             expect(wrapper.find('h2')).to.have.length(1);
           });
@@ -53,9 +56,20 @@ describe('FullHeader Component', () => {
           it('should not have <h1> ', () => {
             const wrapper = shallow(
               <FullHeader
-                subtitle="Test Driven Development"
+              subTitle="Test Driven Development"
               />);
               expect(wrapper.find('h2').props().children).to.be.equal("Test Driven Development");
             });
-          });
-        });
+
+            // bgColor Context
+            context('bgColor', () => {
+              it('should have background-color equal #ccc when node is passed.', () => {
+                const wrapper = shallow(
+                  <FullHeader
+                  title="TDD Trainning"
+                  />);
+                  expect(wrapper).to.have.style('background-color').qual('#ccc')
+                });
+              });
+
+});
