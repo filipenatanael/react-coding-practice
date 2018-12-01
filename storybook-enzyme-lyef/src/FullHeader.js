@@ -5,6 +5,7 @@ const FullHeader = ({ title }) => {
   const component  = (
     <header>
       {title && <h1>{title}</h1>}
+      {subTitle && <h2>{subtitle}</h2>}
     </header>
   );
   return component;

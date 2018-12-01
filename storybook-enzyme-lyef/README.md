@@ -8,8 +8,7 @@ We'll use Storybook, Enzyme and Lyef React Component.
 - npm run build
 - npm run storybook
 - npm start
-
-
+- npm run test
 
 ## Creating your Component
 
