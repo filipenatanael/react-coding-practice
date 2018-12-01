@@ -5,7 +5,13 @@ We'll use Storybook, Enzyme and Lyef React Component.
 ## How to install
 - npm install
 - npm install --only=dev
-- npm run storybook 
+- npm run build
+- npm run storybook
+- npm start
+- npm run test
+
+### chai-enzyme
+- npm install --save-dev chai-enzyme
 
 ## Creating your Component
 
