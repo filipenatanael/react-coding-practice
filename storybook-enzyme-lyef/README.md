@@ -5,7 +5,11 @@ We'll use Storybook, Enzyme and Lyef React Component.
 ## How to install
 - npm install
 - npm install --only=dev
-- npm run storybook 
+- npm run build
+- npm run storybook
+- npm start
+
+
 
 ## Creating your Component
 
