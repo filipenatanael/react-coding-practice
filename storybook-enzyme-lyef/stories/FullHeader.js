@@ -15,20 +15,20 @@ storiesOf('FullHeader Component', module)
         <FullHeader
           title="TDD Trainning"
           subTitle="Test Driven Development"
-          bgColor="#3229988" />
+          bgColor="#322998" />
     ))
     .add('With title, subTitle, bgColor and textColor', () => (
         <FullHeader
           title="TDD Trainning"
           subTitle="Test Driven Development"
-          bgColor="#3229988"
+          bgColor="#322998"
           textColor="#FF9900" />
     ))
     .add('With title, subTitle, bgColor, textColor and font', () => (
         <FullHeader
           title="TDD Trainning"
           subTitle="Test Driven Development"
-          bgColor="#3229988"
+          bgColor="#322998"
           textColor="#FF9900"
           font="cursive" />
     ))
@@ -42,7 +42,7 @@ storiesOf('FullHeader Component', module)
         <FullHeader
           title="TDD Trainning"
           subTitle="Test Driven Development"
-          bgColor="#3229988"
+          bgColor="#322998"
           textColor="#FF9900"
           video="https://cdn.pixabay.com/photo/2018/07/08/01/44/mountains-3523153_960_720.jpg" />
     ))
