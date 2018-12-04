@@ -107,4 +107,20 @@ describe('FullHeader Component', () => {
     });
   });
 
+  // bgColor Context
+  context('font', () => {
+    it('should have background-image equal empty when none is passed.', () => {
+        const wrapper = shallow(<FullHeader />);
+        expect(wrapper.props().style.backgroundImage).equal('url()');
+    });
+
+    it('should have background-image equal bg.jpg when  passed', () => {
+      let backgroundImage = 'https://cdn.pixabay.com/photo/2018/07/08/01/44/mountains-3523153_960_720.jpg';
+
+      const wrapper = shallow(<FullHeader
+        bgImg={backgroundImage} />);
+      expect(wapper).to.have.style('background-image').equal(backgroundImage);
+    });
+  });
+
 });
