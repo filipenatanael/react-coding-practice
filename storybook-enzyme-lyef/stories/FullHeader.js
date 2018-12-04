@@ -36,7 +36,7 @@ storiesOf('FullHeader Component', module)
         <FullHeader
           title="Trainning"
           subTitle="Test Driven Development"
-          bgImg="https://cdn.pixabay.com/photo/2018/07/08/01/44/mountains-3523153_960_720.jpg" />
+          bgImg="https://images.pexels.com/photos/436784/pexels-photo-436784.jpeg" />
     ))
     .add('With title, subTitle and video', () => (
         <FullHeader
@@ -44,5 +44,5 @@ storiesOf('FullHeader Component', module)
           subTitle="Test Driven Development"
           bgColor="#322998"
           textColor="#FF9900"
-          video="https://cdn.pixabay.com/photo/2018/07/08/01/44/mountains-3523153_960_720.jpg" />
+          video="https://images.pexels.com/photos/436784/pexels-photo-436784.jpeg" />
     ))
