@@ -78,19 +78,33 @@ describe('FullHeader Component', () => {
 
   // textColor Context
   context('textColor', () => {
-    it('should have color equal #fff when none is passed', () => {
+    it('should have color equal #fff when none is passed.', () => {
         const wrapper = shallow(<FullHeader
-          title="TDD" />);
+          title="Trainning" />);
         expect(wrapper.props().style.color).equal('#fff');
         // expect(wrapper).to.have.style('color').equal('#fff');
     });
 
-    it('should have color equal #ff0000 when none is passed', () => {
+    it('should have color equal #ff0000 when none is passed.', () => {
         const wrapper = shallow(<FullHeader
           title="Trainning"
           textColor="#ff0000" />);
         expect(wrapper.props().style.color).equal('#ff0000');
     });
-});
+  });
+
+  // font Context
+  context('font', () => {
+    it('should have font equal sans-serif when none is passed.', () => {
+        const wrapper = shallow(<FullHeader />);
+        expect(wrapper.props().style.fontFamily).equal('sans-serif');
+    });
+
+    it('should have font equal open-sans when none is passed.', () => {
+        const wrapper = shallow(<FullHeader
+           font="open-sans" />);
+        expect(wrapper.props().style.fontFamily).equal('open-sans');
+    });
+  });
 
 });
