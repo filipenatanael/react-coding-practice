@@ -16,7 +16,8 @@ describe('FullHeader Component', () => {
   context('title', () => {
     it('should have <h1> tag when title passed.', () => {
         const wrapper = shallow(
-        <FullHeader title="TDD Trainning" />);
+        <FullHeader
+        title="Trainning" />);
         expect(wrapper.find('h1')).to.have.length(1);
     });
 
@@ -27,8 +28,9 @@ describe('FullHeader Component', () => {
 
     it('should have <h1> tag with the title passed.', () => {
         const wrapper = shallow(
-        <FullHeader title="TDD Trainning" />);
-        expect(wrapper.find('h1').props().children).to.be.equal("TDD Trainning");
+        <FullHeader
+        title="Trainning" />);
+        expect(wrapper.find('h1').props().children).to.be.equal("Trainning");
     });
   });
 
@@ -36,7 +38,8 @@ describe('FullHeader Component', () => {
   context('subtitle', () => {
     it('should have <h2> tag when subtitle passed.', () => {
         const wrapper = shallow(
-        <FullHeader subTitle="Test Driven Development" />);
+        <FullHeader
+        subTitle="Test Driven Development" />);
         expect(wrapper.find('h2')).to.have.length(1);
     });
 
@@ -46,19 +49,48 @@ describe('FullHeader Component', () => {
         expect(wrapper.find('h2')).to.have.length(0);
     });
 
-    it('should not have <h1> ', () => {
-        const wrapper = shallow(
-        <FullHeader subTitle="Test Driven Development" />);
+    it('should have h1 tag with the title passed', () => {
+        const wrapper = shallow(<FullHeader
+          subTitle="Test Driven Development" />);
         expect(wrapper.find('h2').props().children).to.be.equal("Test Driven Development");
     });
+  });
 
+  // bgColor Context
+  context('bgColor', () => {
     it('should have background-color equal #ccc when none is passed.', () => {
-        const wrapper = shallow(<FullHeader title="TDD" bgColor="#ccc" />);
+        const wrapper = shallow(<FullHeader
+          title="Trainning"
+          bgColor="#ccc" />);
         console.log(wrapper.props().style);
         expect(wrapper.props().style.backgroundColor).to.be.equal('#ccc');
         /* TypeError: (0 , _chai.expect)(...).to.have.style is not a function
         expect(wrapper).to.have.style('background-color').equal('#ccc'); */
     });
+
+    it('should have background-color equal #ccc when none is passed.', () => {
+        const wrapper = shallow(
+        <FullHeader
+        subTitle="Test Driven Development" />);
+        expect(wrapper.find('h2').props().children).to.be.equal("Test Driven Development");
+    });
   });
+
+  // textColor Context
+  context('textColor', () => {
+    it('should have color equal #fff when none is passed', () => {
+        const wrapper = shallow(<FullHeader
+          title="TDD" />);
+        expect(wrapper.props().style.color).equal('#fff');
+        // expect(wrapper).to.have.style('color').equal('#fff');
+    });
+
+    it('should have color equal #ff0000 when none is passed', () => {
+        const wrapper = shallow(<FullHeader
+          title="Trainning"
+          textColor="#ff0000" />);
+        expect(wrapper.props().style.color).equal('#ff0000');
+    });
+});
 
 });
