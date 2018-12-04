@@ -1,6 +1,6 @@
-# Learning React TDD
+# Learning React: TDD + BDD
 
-We'll use Storybook, Enzyme and Lyef React Component.
+We'll use *Storybook, Enzyme and Lyef* React Component.
 
 ## How to install
 - npm install
