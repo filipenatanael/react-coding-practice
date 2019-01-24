@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/filipenatanael/react-coding-practice" target="\_blank" rel="noopener noreferrer"><img width="100" src="https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-512.png" alt="My Reads"></a></p>
+<p align="center"><a target="\_blank" href="https://github.com/filipenatanael/react-coding-practice"><img width="100" src="https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-512.png" alt="My Reads"></a></p>
 
 <p align="center">React Coding Practice</p>
 
