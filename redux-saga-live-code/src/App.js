@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+
 import store from './store';
 
 import TodoList from './TodoList';
@@ -9,7 +10,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <h1>App</h1>
+          <h1>Redux Saga Live Code</h1>
           <TodoList />
         </div>
       </Provider>

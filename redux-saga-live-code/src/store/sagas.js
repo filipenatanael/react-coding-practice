@@ -1,19 +1,9 @@
 import { delay } from 'redux-saga';
 import { takeLatest, put, call, select } from 'redux-saga/effects';
 
-function apiGet(text, length) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve([
-        { id: 1, text: 'Fazer café' },
-        { id: 2, text: 'Fazer café 2' },
-        { id: 3, text: 'Fazer café 3' },
-        { id: 4, text: 'Fazer café 4' },
-      ]);
-    }, 2000);
-  });
-}
+import apiGet from './api';
 
+// function* setTodoList(action) { action.payload }
 function* getTodoList() {
   try {
     const response = yield call(apiGet);
@@ -26,6 +16,7 @@ function* getTodoList() {
 
 export default function* root() {
   yield [
+    // takeEvery('REQUEST_TODO_LIST', getTodoList),
     takeLatest('REQUEST_TODO_LIST', getTodoList),
   ];
 }
