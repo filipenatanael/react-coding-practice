@@ -6,3 +6,4 @@
 - snippets: *(Codes and techniques)*
 - react-live-chat-exercise: *(React Live Chat Application)*
 - rails-style-patterns: *("Rails style" & "Duck Style" folder structure  for you app.)*
+- redux-saga-live-code: *We'll use Redux Saga*
