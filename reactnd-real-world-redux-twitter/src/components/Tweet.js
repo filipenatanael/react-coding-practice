@@ -2,11 +2,19 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatTweet, formatDate } from '../utils/helpers'
 import { TiArrowBackOutline, TiHeartOutline, TiHeartFullOutline } from 'react-icons/ti/index'
+import { handleToggleTweet } from '../actions/tweets'
 
 class Tweet extends Component {
+
   handleLike = (e) => {
     e.preventDefault();
-    // todo: Handle Like Tweet
+    const { dispatch, tweet, authedUser } = this.props
+
+    dispatch(handleToggleTweet({
+      id: tweet.id,
+      hasLiked: tweet.hasLiked,
+      authedUser
+    }))
   }
 
   toParent = (e, id) => {
@@ -19,9 +27,7 @@ class Tweet extends Component {
 
     if (tweet === null) { return <p>This Tweet doesn't existed</p> }
 
-    const {
-      name, avatar, timestamp, text, hasLiked, likes, replies, id, parent
-    } = tweet
+    const { name, avatar, timestamp, text, hasLiked, likes, replies, id, parent } = tweet
 
     return (
       <div className='tweet'>
@@ -66,6 +72,7 @@ class Tweet extends Component {
 // mapStateToProps({ storeStates }, { ownState })
 function mapStateToProps({ authedUser, users, tweets }, { id }) {
   const tweet = tweets[id]
+  // Se o tweet tiver um pai, então retorno ele para o parentTweet
   const parentTweet = tweet ? tweets[tweet.replyingTo] : null
 
   return {
