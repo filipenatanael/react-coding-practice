@@ -18,7 +18,7 @@ class NewTweet extends Component {
     event.preventDefault()
 
     const { text } = this.state
-    cont { dispatch, id } = this.props
+    const { dispatch, id } = this.props
 
     dispatch(handleAddTweet(text, id))
 
