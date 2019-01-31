@@ -6,8 +6,8 @@ import { handleToggleTweet } from '../actions/tweets'
 
 class Tweet extends Component {
 
-  handleLike = (e) => {
-    e.preventDefault();
+  handleLike = (event) => {
+    event.preventDefault();
     const { dispatch, tweet, authedUser } = this.props
 
     dispatch(handleToggleTweet({
@@ -17,8 +17,8 @@ class Tweet extends Component {
     }))
   }
 
-  toParent = (e, id) => {
-    e.preventDefault();
+  toParent = (event, id) => {
+    event.preventDefault();
     // todo: Redirect to parent Tweet.
   }
 
