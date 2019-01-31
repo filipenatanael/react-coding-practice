@@ -18,5 +18,6 @@ ReactDOM.render(
 , document.getElementById('root'))
 
 
-// Another Way...
-// <Provider store={createStore(reducer, applyMiddleware(thunk, logger))}>
+/* Another Way...
+  <Provider store={createStore(reducer, applyMiddleware(thunk, logger))}>
+*/
