@@ -9,17 +9,16 @@ class NewTweet extends Component {
 
   handleChange = (event) => {
     const text = event.target.value
-    this.setState(() => {
+    this.setState(() => ({
       text
-    })
+    }))
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
-
     const { text } = this.state
+    // Get [id] tweet that we'll reply, if we're replyingTo
     const { dispatch, id } = this.props
-
     dispatch(handleAddTweet(text, id))
 
     this.setState(() => ({
