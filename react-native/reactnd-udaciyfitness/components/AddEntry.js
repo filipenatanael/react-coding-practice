@@ -19,7 +19,7 @@ export default class AddEntry extends Component {
   state = {
     run: 0,
     bike: 0,
-    swin: 0,
+    swim: 0,
     sleep: 0,
     eat: 0,
   }
@@ -59,13 +59,7 @@ export default class AddEntry extends Component {
     const entry = this.state
 
     // Update Redux
-    this.setState({
-      run: 0,
-      bike: 0,
-      swin: 0,
-      sleep: 0,
-      eat: 0,
-    })
+    this.setState(() => ({ run: 0, bike: 0, swim: 0, sleep: 0, eat: 0 }))
 
     // Navigate to Home
 
@@ -93,7 +87,7 @@ export default class AddEntry extends Component {
               {type === 'slider'
                 ? <UdaciSlider
                     value={value}
-                    onChange={(value) => this.slide()}
+                    onChange={(value) => this.slide(key, value)}
                     {...rest} />
                 : <UdaciSteppers
                     value={value}
