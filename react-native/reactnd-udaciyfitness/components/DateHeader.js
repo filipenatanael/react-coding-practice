@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 
 export default function DateHeader({ date }) {
   return (
-    <Text style={{ color: '#fff' }}>
+    <Text>
       {date}
     </Text>
   )

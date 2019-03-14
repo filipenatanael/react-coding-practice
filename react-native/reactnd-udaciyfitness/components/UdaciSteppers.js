@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 export default function UdaciSteppers() {
   return (
     <View>
-      <Text style={{ color: '#fff' }}>UdaciSteppers</Text>
+      <Text>UdaciSteppers</Text>
     </View>
   )
 }
