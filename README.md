@@ -8,3 +8,5 @@
 - **rails-style-patterns:** *("Rails style" & "Duck Style" folder structure  for you app.)*
 - **redux-saga-live-code:** *We'll use Redux Saga*
 - **reactnd-real-world-redux-twitter:** *Twitter clone using react*
+- **React Native**
+  - Udacity Fitness Project
