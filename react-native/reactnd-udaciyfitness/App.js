@@ -6,7 +6,9 @@ import reducer from './reducers';
 
 const store = createStore(reducer);
 
-import AddEntry from './components/AddEntry'
+import AddEntry from './components/AddEntry';
+import FlexboxExamples from './components/Demo/FlexboxExamples';
+import FlexboxListExample from './components/Demo/FlexboxListExample';
 
 export default class App extends React.Component {
   render() {
@@ -24,7 +26,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
