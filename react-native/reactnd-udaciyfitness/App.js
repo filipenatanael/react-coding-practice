@@ -6,7 +6,9 @@ import reducer from './reducers';
 
 const store = createStore(reducer);
 
-import AddEntry from './components/AddEntry'
+import AddEntry from './components/AddEntry';
+import FlexboxExamples from './components/Demo/FlexboxExamples';
+import FlexboxListExample from './components/Demo/FlexboxListExample';
 
 export default class App extends React.Component {
   render() {
