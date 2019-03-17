@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { connect } from 'react-redux';
 import { getMetricMetaInfo, timeToString, getDailyReminderValue } from '../utils/helpers';
 import { submitEntry, removeEntry } from '../utils/api';
-import { purple, white } from '../utils/colors'
-
-import { connect } from 'react-redux';
+import { purple } from '../utils/colors';
 import { addEntry } from '../actions';
-
 import UdaciSlider from './UdaciSlider';
 import UdaciSteppers from './UdaciSteppers';
 import DateHeader from './DateHeader';
 import TextButton from './TextButton';
 
-function SubmitBtn ({ onPress }) {
+function SubmitBtn({ onPress }) {
   return (
     <TouchableOpacity
       style={Platform.OS === 'ios' ? styles.iosSubmitBtn : styles.androidSubmitBtn}
-      onPress={onPress}>
+      onPress={onPress}
+    >
         <Text style={styles.submitBtnText}>Submit</Text>
     </TouchableOpacity>
-  )
+  );
 }
 
 class AddEntry extends Component {
@@ -32,86 +31,87 @@ class AddEntry extends Component {
     eat: 0,
   }
 
+  onSubmit = () => {
+    const key = timeToString();
+    const entry = this.state;
+
+    this.props.dispatch(addEntry({
+      [key]: entry
+    }));
+
+    // Update Redux
+    this.setState(() => ({ run: 0, bike: 0, swim: 0, sleep: 0, eat: 0 }));
+
+    // Navigate to Home
+
+    // Save to 'DB'
+    submitEntry({ key, entry });
+
+    // Clearn local notification
+  }
+
   increment = (metric) => {
-    const { max, step } = getMetricMetaInfo(metric)
+    const { max, step } = getMetricMetaInfo(metric);
 
     this.setState((state) => {
-      const count = state[metric] + step
+      const count = state[metric] + step;
 
       return {
         ...state,
         [metric]: count > max ? max : count
-      }
-    })
+      };
+    });
   }
 
   decrement = (metric) => {
     this.setState((state) => {
-      const count = state[metric] - getMetricMetaInfo(metric).step
+      const count = state[metric] - getMetricMetaInfo(metric).step;
 
       return {
         ...state,
         [metric]: count < 0 ? 0 : count
-      }
-    })
+      };
+    });
   }
 
   slide = (metric, value) => {
     this.setState(() => ({
       [metric]: value
-    }))
-  }
-
-  onSubmit = () => {
-    const key = timeToString()
-    const entry = this.state
-
-    this.props.dispatch(addEntry({
-      [key]: entry
-    }))
-
-    // Update Redux
-    this.setState(() => ({ run: 0, bike: 0, swim: 0, sleep: 0, eat: 0 }))
-
-    // Navigate to Home
-
-    // Save to 'DB'
-    submitEntry({ key, entry })
-
-    // Clearn local notification
+    }));
   }
 
   reset = () => {
-    const key = timeToString()
+    const key = timeToString();
 
     this.props.dispatch(addEntry({
       [key]: getDailyReminderValue()
-    }))
+    }));
 
     // Update redux
 
     // Route to Home
 
     // Update 'DB'
-    removeEntry(key)
+    removeEntry(key);
   }
 
   render() {
-    const metaInfo = getMetricMetaInfo()
+    const metaInfo = getMetricMetaInfo();
 
     if (this.props.alreadyLogged) {
       return (
         <View style={styles.center}>
           <Ionicons
             name={Platform.OS === 'ios' ? 'ios-happy-outline' : 'md-happy'}
-            size={100} />
+            size={100}
+          />
 
           <Text>You already logged your information for today.</Text>
           <TextButton style={{ padding: 10 }} onPress={this.reset}>
             Reset
           </TextButton>
         </View>
-      )
+      );
     }
 
     return (
@@ -120,8 +120,8 @@ class AddEntry extends Component {
         <Text>{JSON.stringify(this.state)}</Text>
 
         {Object.keys(metaInfo).map((key) => {
-          const { getIcon, type, ...rest } = metaInfo[key] // metaInfo[run]...
-          const value = this.state[key]
+          const { getIcon, type, ...rest } = metaInfo[key]; // metaInfo[run]...
+          const value = this.state[key];
 
           return (
             <View key={key} style={styles.row}>
@@ -130,21 +130,23 @@ class AddEntry extends Component {
               {type === 'slider'
                 ? <UdaciSlider
                     value={value}
-                    onChange={(value) => this.slide(key, value)}
-                    {...rest} />
+                    onChange={(input) => this.slide(key, input)}
+                    {...rest}
+                />
                 : <UdaciSteppers
                     value={value}
                     {...rest}
                     onIncrement={() => this.increment(key)}
-                    onDecrement={() => this.decrement(key)} />
+                    onDecrement={() => this.decrement(key)}
+                />
               }
             </View>
-          )
+          );
         })}
 
         <SubmitBtn onPress={this.onSubmit} />
       </View>
-    )
+    );
   }
 }
 
@@ -192,12 +194,12 @@ const styles = StyleSheet.create({
   }
 });
 
-function mapStateToProps (state) {
-  const key = timeToString() // Today: 2017-12-19
+function mapStateToProps(state) {
+  const key = timeToString(); // Today: 2017-12-19
 
   return {
     alreadyLogged: state[key] && typeof state[key].today === 'undefined'
-  }
+  };
 }
 
-export default connect(mapStateToProps)(AddEntry)
+export default connect(mapStateToProps)(AddEntry);

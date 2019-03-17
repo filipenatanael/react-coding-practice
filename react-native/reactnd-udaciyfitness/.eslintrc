@@ -1,1 +1,7 @@
-{ "extends": "rallycoding" }
+{
+  "extends": "rallycoding",
+  "rules": {
+    # "semi": 0,
+    "import/no-extraneous-dependencies": 0,
+  }
+}
