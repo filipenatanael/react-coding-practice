@@ -1,14 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers';
+import AddEntry from './components/AddEntry';
+// import FlexboxExamples from './components/Demo/FlexboxExamples';
+// import FlexboxListExample from './components/Demo/FlexboxListExample';
 
 const store = createStore(reducer);
-
-import AddEntry from './components/AddEntry';
-import FlexboxExamples from './components/Demo/FlexboxExamples';
-import FlexboxListExample from './components/Demo/FlexboxListExample';
 
 export default class App extends React.Component {
   render() {
