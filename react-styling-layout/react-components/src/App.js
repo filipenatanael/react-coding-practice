@@ -13,16 +13,29 @@ class App extends Component {
             name="firstName"
             placeholder="Enter your first name."
             required={true}
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
           />
 
+          <br />
+          <InputType
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password."
+            required={true}
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+            message="Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number."
+          />
+
+          <br />
           <InputType
             type="email"
             id="email"
             name="email"
             placeholder="Enter your email."
             required={true}
+            message="Must be a valid email address."
           />
+
           <ButtonSubmit value="Sign Up" />
         </FormControl>
     );

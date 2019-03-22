@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import './index.css';
 
 import CheckIcon from '../../assets/images/CheckIcon.svg';
 
 
 export default class InputType extends Component {
   render() {
-    const { type, id, name, placeholder, required } = this.props;
+    const { type, id, name, placeholder, required, pattern, message } = this.props;
     return (
       <Container>
         {/* placeholder=" " */}
@@ -17,26 +16,30 @@ export default class InputType extends Component {
           name={name}
           placeholder=" "
           required={required}
+          pattern={pattern}
         />
           <Label htmlFor={id}>
             {placeholder}
           </Label>
-          <Requirements className="requirements">
-            Must be a valid email address.
-          </Requirements>
+          {type === "email" || type === "password"
+            ? <Requirements className="requirements">
+                {message}
+              </Requirements>
+            : null
+          }
       </Container>
     );
   }
 }
 
 const Requirements = styled.div`
-padding: 0 30px 0 50px;
-color: #999;
-max-height: 0;
-transition: 0.28s;
-overflow: hidden;
-color: red;
-font-style: italic;
+  padding: 0 30px 0 50px;
+  color: #999;
+  max-height: 0;
+  transition: 0.28s;
+  overflow: hidden;
+  color: red;
+  font-style: italic;
 `;
 
 const Container = styled.div`
