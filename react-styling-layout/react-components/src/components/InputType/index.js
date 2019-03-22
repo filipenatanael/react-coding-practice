@@ -28,11 +28,32 @@ const Input = styled.input`
     background: white;
   }
 
+  &:focus + label {
+    opacity: 0;
+  }
+
   &:valid {
     background: url(${CheckIcon});
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: 20px 20px;
+  }
+
+  &:valid + label {
+    opacity: 0;
+  }
+
+  &:invalid:not(&:focus):not(&:placeholder-shown) {
+    background: pink;
+  }
+
+  &:invalid:not(&:focus):not(&:placeholder-shown) + label {
+    opacity: 0;
+  }
+
+  &:invalid:focus:not(:placeholder-shown) ~ .requirements {
+    max-height: 200px;
+    padding: 0 30px 20px 50px;
   }
 `;
 
@@ -48,7 +69,7 @@ class InputType extends Component {
           placeholder=""
           required={required}
         />
-          <Label for={name}>
+          <Label htmlFor={name}>
             {placeholder}
           </Label>
       </Container>
