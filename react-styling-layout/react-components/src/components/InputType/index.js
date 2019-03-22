@@ -1,7 +1,28 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import CheckIcon from '../../assets/images/check_icon.svg';
+import CheckIcon from '../../assets/images/CheckIcon.svg';
+
+
+export default class InputType extends Component {
+  render() {
+    const { type, id, name, placeholder, required } = this.props;
+    return (
+      <Container>
+        <Input
+          type={type}
+          id={id}
+          name={name}
+          placeholder=""
+          required={required}
+        />
+          <Label htmlFor={name}>
+            {placeholder}
+          </Label>
+      </Container>
+    );
+  }
+}
 
 const Container = styled.div`
   position: relative;
@@ -56,25 +77,3 @@ const Input = styled.input`
     padding: 0 30px 20px 50px;
   }
 `;
-
-class InputType extends Component {
-  render() {
-    const { type, id, name, placeholder, required } = this.props;
-    return (
-      <Container>
-        <Input
-          type={type}
-          id={id}
-          name={name}
-          placeholder=""
-          required={required}
-        />
-          <Label htmlFor={name}>
-            {placeholder}
-          </Label>
-      </Container>
-    );
-  }
-}
-
-export default InputType;
