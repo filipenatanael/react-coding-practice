@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FormControl from './components/FormControl';
 import InputType from './components/InputType';
+import ButtonSubmit from './components/ButtonSubmit';
 
 class App extends Component {
   render() {
@@ -12,7 +13,9 @@ class App extends Component {
             name="firstName"
             placeholder="Enter your first name."
             required={true}
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
           />
+          <ButtonSubmit value="Sign Up" />
         </FormControl>
     );
   }
