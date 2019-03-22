@@ -15,6 +15,14 @@ class App extends Component {
             required={true}
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
           />
+
+          <InputType
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email."
+            required={true}
+          />
           <ButtonSubmit value="Sign Up" />
         </FormControl>
     );

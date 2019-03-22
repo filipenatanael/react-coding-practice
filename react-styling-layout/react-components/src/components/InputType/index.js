@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import './index.css';
 
 import CheckIcon from '../../assets/images/CheckIcon.svg';
 
@@ -9,20 +10,34 @@ export default class InputType extends Component {
     const { type, id, name, placeholder, required } = this.props;
     return (
       <Container>
+        {/* placeholder=" " */}
         <Input
           type={type}
           id={id}
           name={name}
-          placeholder=""
+          placeholder=" "
           required={required}
         />
-          <Label htmlFor={name}>
+          <Label htmlFor={id}>
             {placeholder}
           </Label>
+          <Requirements className="requirements">
+            Must be a valid email address.
+          </Requirements>
       </Container>
     );
   }
 }
+
+const Requirements = styled.div`
+padding: 0 30px 0 50px;
+color: #999;
+max-height: 0;
+transition: 0.28s;
+overflow: hidden;
+color: red;
+font-style: italic;
+`;
 
 const Container = styled.div`
   position: relative;
@@ -47,10 +62,9 @@ const Input = styled.input`
   &:focus {
     outline: 0;
     background: white;
-  }
-
-  &:focus + label {
-    opacity: 0;
+    & + label {
+      opacity: 0;
+    }
   }
 
   &:valid {
@@ -58,22 +72,22 @@ const Input = styled.input`
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: 20px 20px;
+    & + label {
+      opacity: 0;
+    }
   }
 
-  &:valid + label {
-    opacity: 0;
-  }
-
-  &:invalid:not(&:focus):not(&:placeholder-shown) {
+  &:invalid:not(:focus):not(:placeholder-shown) {
     background: pink;
+    & + label {
+      opacity: 0;
+    }
   }
 
-  &:invalid:not(&:focus):not(&:placeholder-shown) + label {
-    opacity: 0;
-  }
-
-  &:invalid:focus:not(:placeholder-shown) ~ .requirements {
-    max-height: 200px;
-    padding: 0 30px 20px 50px;
+  &:invalid:focus:not(:placeholder-shown) {
+    & ~ .requirements {
+      max-height: 200px;
+      padding: 0 30px 20px 50px;
+    }
   }
 `;
