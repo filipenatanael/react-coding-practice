@@ -5,8 +5,6 @@ import { Provider } from 'react-redux';
 import reducer from './reducers';
 import AddEntry from './components/AddEntry';
 import History from './components/History';
-// import FlexboxExamples from './components/Demo/FlexboxExamples';
-// import FlexboxListExample from './components/Demo/FlexboxListExample';
 
 const store = createStore(reducer);
 
