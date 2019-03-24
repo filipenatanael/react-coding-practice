@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import { getMetricMetaInfo, timeToString, getDailyReminderValue } from '../utils/helpers';
 import { submitEntry, removeEntry } from '../utils/api';
-import { purple } from '../utils/colors';
+import { purple, white } from '../utils/colors';
 import { addEntry } from '../actions';
 import UdaciSlider from './UdaciSlider';
 import UdaciSteppers from './UdaciSteppers';
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: 'white'
+    backgroundColor: white
   },
   row: {
     flex: 1,
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   submitBtnText: {
-    color: 'white',
+    color: white,
     fontSize: 22,
     textAlign: 'center'
   },

@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   iosBtn: {
-    backgroundColor: 'white',
+    backgroundColor: white,
     borderColor: purple,
     borderWidth: 1,
     borderRadius: 3,
