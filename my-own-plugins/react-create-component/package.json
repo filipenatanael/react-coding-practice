@@ -1,0 +1,21 @@
+{
+  "name": "react-create-component",
+  "version": "1.1.0",
+  "description": "Plugins to create components on react.js applications.",
+  "author": "Filipe Nantanael <filipenatanaeldemorais@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "jusus": "index.js"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "dotenv": "^6.2.0"
+  },
+  "devDependencies": {
+    "fs": "0.0.1-security"
+  }
+}
