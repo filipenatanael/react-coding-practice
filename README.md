@@ -10,3 +10,6 @@
 - **reactnd-real-world-redux-twitter:** *Twitter clone using react*
 - **React Native**
   - Udacity Fitness Project
+  - udacity-navigations
+- **my-own-plugins**
+  - react-create-component
