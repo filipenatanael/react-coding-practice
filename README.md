@@ -2,12 +2,18 @@
 
 <h1 align="center">React Coding Practice</h1>
 
+- **react-core-advanced-concepts:** *Learm react core concepts*
+  - run-eject-dependencies
+  - testing-concepts-app
+- **my-own-plugins:** *creating my own plugins for react & react-native or related*
+  - react-create-component
+- **progressive-web-apps:** *An progressive web app*
+- **rails-style-patterns:** *("Rails style" & "Duck Style" folder structure  for you app.)*
 - **storybook-enzyme-lyef:** *(We'll use Storybook, Enzyme, Lyef React Component and applying TDD & BDD)*
+- **reactnd-real-world-redux-twitter:** *Twitter clone using react*
 - **snippets:** *(Codes and techniques)*
 - **react-live-chat-exercise:** *(React Live Chat Application)*
-- **rails-style-patterns:** *("Rails style" & "Duck Style" folder structure  for you app.)*
 - **redux-saga-live-code:** *We'll use Redux Saga*
-- **reactnd-real-world-redux-twitter:** *Twitter clone using react*
 - **React Native**
   - Udacity Fitness Project
   - Udacity Navigations
