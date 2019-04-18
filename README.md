@@ -7,7 +7,7 @@
   - testing-concepts-app
 - **my-own-plugins:** *creating my own plugins for react & react-native or related*
   - react-create-component
-- **progressive-web-apps:** *An progressive web app*
+- **progressive-web-apps:** *How to Build a React Progressive Web Application (PWA)*
 - **rails-style-patterns:** *("Rails style" & "Duck Style" folder structure  for you app.)*
 - **storybook-enzyme-lyef:** *(We'll use Storybook, Enzyme, Lyef React Component and applying TDD & BDD)*
 - **reactnd-real-world-redux-twitter:** *Twitter clone using react*

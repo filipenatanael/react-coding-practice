@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Clicking edit button brings up edit form 1`] = `
+<div
+  className="column"
+>
+  <div
+    className="ui brown card"
+  >
+    <img
+      className="ui image"
+      src="https://www.testurl.com/images/image"
+    />
+    <div
+      className="content"
+    >
+      <div
+        className="ui form"
+      >
+        <div
+          className="field"
+        >
+          <label>
+            Title
+          </label>
+          <input
+            defaultValue="Todo"
+            name="title"
+            onChange={[Function]}
+            type="text"
+          />
+        </div>
+        <div
+          className="field"
+        >
+          <label>
+            Project
+          </label>
+          <input
+            defaultValue="Project"
+            name="project"
+            onChange={[Function]}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="extra content"
+    >
+      <div
+        className="ui two buttons"
+      >
+        <button
+          className="ui basic green button"
+          onClick={[Function]}
+        >
+          <i
+            className="checkmark icon"
+          />
+           Update
+        </button>
+        <button
+          className="ui basic red button"
+          onClick={[Function]}
+        >
+          <i
+            className="remove icon"
+          />
+           Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Renders correctly 1`] = `
+<div
+  className="column"
+>
+  <div
+    className="ui brown card"
+  >
+    <img
+      className="ui image"
+      src="https://www.testurl.com/images/image"
+    />
+    <div
+      className="content"
+    >
+      <div
+        className="header"
+      >
+        Todo
+      </div>
+      <div
+        className="meta"
+      >
+        Project
+      </div>
+      <div
+        className="meta"
+      >
+        Created 
+        a day ago
+      </div>
+    </div>
+    <div
+      className="extra content"
+    >
+      <div>
+        <div
+          className="ui toggle checkbox"
+          style={
+            Object {
+              "marginBottom": "10px",
+            }
+          }
+        >
+          <input
+            defaultChecked={false}
+            name="public"
+            onChange={[Function]}
+            type="checkbox"
+            value="on"
+          />
+          <label>
+            Complete
+          </label>
+        </div>
+        <div
+          className="ui two buttons"
+        >
+          <button
+            className="ui basic green button"
+            onClick={[Function]}
+          >
+            Edit
+          </button>
+          <button
+            className="ui basic red button"
+            onClick={[Function]}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
