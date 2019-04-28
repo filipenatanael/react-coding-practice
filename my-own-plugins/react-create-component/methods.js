@@ -1,33 +1,26 @@
 const fs = require('fs');
-
 require('dotenv').config();
-
-console.log(process.env.COMPONENT_DIR);
-
+const { capitalize } = require('./helpers/');
+// console.log(process.env.COMPONENT_DIR);
 
 const createComponent = (name, options={ extension: 'js' }) => {
-  let directory_files =  `${process.env.COMPONENT_DIR}\/${name}.${options.extension}`;
-  // 'components/'+component_name+'.js';
-console.log(directory_files);
-  let template = `<template>
-    <div>
-      Hello World!
-    <div>
-  </template>
+  let upperName = capitalize(name);
+  let directory_files =  `${process.env.COMPONENT_DIR}\/${upperName}.${options.extension}`;
 
-  <script>
-  export default {
-    name: ${name}
-    data () {
-      return {
-        greeting: 'Hello'
-      }
-    }
+let template = `import React, { Component } from 'react';
+
+class ${upperName} extends Component{
+  render() {
+    return (
+      <div>
+        <h1>Hello World!</h1>
+      </div>
+    );
   }
-  </script>
+}
 
-  <style>
-  </style>`;
+export default ${upperName};
+`;
 
   fs.appendFile(directory_files, template, function (err) {
     if (err) throw err;
