@@ -9,7 +9,7 @@
   },
   "preferGlobal": true,
   "bin": {
-    "jusus": "index.js"
+    "jesus": "index.js"
   },
   "dependencies": {
     "commander": "^2.19.0",

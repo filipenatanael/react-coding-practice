@@ -10,4 +10,6 @@ sudo npm install -g <optional directory>
 sudo npm install -g
 
 sudo chmod 777 index.js
+
+jesus create-component <name> --reducer <name>
 ```
