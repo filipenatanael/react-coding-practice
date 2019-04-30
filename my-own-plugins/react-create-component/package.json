@@ -5,7 +5,8 @@
   "author": "Filipe Nantanael <filipenatanaeldemorais@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
   },
   "preferGlobal": true,
   "bin": {
