@@ -14,6 +14,8 @@
     "jesus": "index.js"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "commander": "^2.19.0",
     "dotenv": "^6.2.0"
   },
