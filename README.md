@@ -14,6 +14,7 @@
 - **snippets:** *(Codes and techniques)*
 - **react-live-chat-exercise:** *(React Live Chat Application)*
 - **redux-saga-live-code:** *We'll use Redux Saga*
+- **react-typescript-example** *Simple typescript react project*
 - **React Native**
   - Udacity Fitness Project
   - Udacity Navigations
