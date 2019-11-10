@@ -1,5 +1,4 @@
 import React from "react";
-import { ok } from "assert";
 
 interface Person {
     firstName: string;
